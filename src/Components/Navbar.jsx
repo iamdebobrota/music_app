@@ -66,7 +66,7 @@ export default function Navbar() {
                   </Center>
                   <br />
                   <Center>
-                    <h1>Vivek Goswmai</h1>
+                    <h1>Debobrota</h1>
                   </Center>
                   <br />
                  
