@@ -9,9 +9,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Stack,
-  Link,
   Button,
   Heading,
   useColorModeValue,
@@ -79,11 +77,11 @@ const EditMusicRecord = () => {
      >
        <Stack spacing={4}>
          <FormControl id="email">
-           <FormLabel>Email address</FormLabel>
+           <FormLabel>Artist name</FormLabel>
            <Input onChange={(e) =>   setMusicName(e.target.value)} value={musicName} />
          </FormControl>
          <FormControl id="password">
-           <FormLabel>Password</FormLabel>
+           <FormLabel>Music name</FormLabel>
            <Input onChange={(e) => setArtistName(e.target.value)} value={artistName} />
          </FormControl>
          <Stack spacing={10}>
@@ -115,31 +113,3 @@ const EditMusicRecord = () => {
 };
 
 export default EditMusicRecord;
-
-// return (
-//   <div style={{display : "flex" , flexDirection : "column" , justifyContent : "space-around" , gap : "30px"}}>
-//     <h1>EditMusicRecord : {id}</h1>
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label>Edit Music Name : -</label>
-//         <input 
-//           value={musicName}
-//           type="text"
-//           onChange={(e) => {
-//             setMusicName(e.target.value);
-//           }}
-//         />
-//       </div>
-//       <div>
-//         <label>Edit Artist Name :---</label>
-//         <input
-//           value={artistName}
-//           type="text"
-//           onChange={(e) => {
-//             setArtistName(e.target.value);
-//           }}
-//         />
-//       </div>
-//       <Button type="submit">Update</Button>
-//     </form>
-//   </div>

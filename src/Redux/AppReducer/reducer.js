@@ -12,7 +12,8 @@ const initialState = {
 };
 
 
-const reducer = (oldState = initialState, action) => {  //  {state,action -> type , payload}
+const reducer = (oldState = initialState, action) => { 
+   //  {state,action -> type , payload}
   const { type, payload } = action;
 
   switch (type) {

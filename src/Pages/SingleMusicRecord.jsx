@@ -1,3 +1,4 @@
+import { Box, Button, Center } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
@@ -14,9 +15,6 @@ const SingleMusicRecord = () => {
   const { id } = useParams();
   const { musicRecords } = useSelector((state) => state.AppReducer);
 
-  //  console.log(musicRecords)
-  // console.log(id)
-
   useEffect(() => {
     if (!musicRecords.length) {
       dispatch(getMusicRecords());
@@ -24,32 +22,34 @@ const SingleMusicRecord = () => {
   }, [dispatch, musicRecords.length]);
   useEffect(() => {
     if (id) {
-      // console.log(musicRecords)
-      //filter the album based on the id
       const currentMusic = musicRecords.find((album) => album.id === id);
       currentMusic && setCurrentMusicAlbum(currentMusic);
     }
   }, [id, musicRecords]);
 
-  // console.log(currentMusicAlbum)
 
   return (
     <>
       <h1>SingleMusicRecord</h1>
+<Center>
 
       <br />
       <br />
       <br />
       <br />
-      <div style={{ border: "4px solid black", width: "30%", margin: "auto" }}>
+      <Box boxShadow='lg' p='6' rounded='md' bg='white'>
+  
+      <div >
         <h4> {currentMusicAlbum.id} </h4>
         <h4> {currentMusicAlbum.name} </h4>
         <h4> {currentMusicAlbum.genre} </h4>
         <img src={currentMusicAlbum.img} alt="pic" />
         <h4> {currentMusicAlbum.artist} </h4>
       </div>
+  </Box>
+</Center>
 
-      <Link to={`/music/${id}/edit`}>Edit</Link>
+      <Link to={`/music/${id}/edit`}><Button colorScheme="teal">Edit</Button></Link>
     </>
   );
 };

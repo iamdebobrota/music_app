@@ -19,7 +19,6 @@ const FilterSort = () => {
 
   const handleGenreChange = (e) => {
     const option = e.target.value;   // k-pop
- 
     let newCategory = [...category];    // [k-pop]
 
     if (category.includes(option)) {
@@ -43,11 +42,7 @@ const FilterSort = () => {
       setSearchParams(params);
     }
   }, [category, setSearchParams, sortBy]);  // dependency
-
-  // console.log(sortBy);
-  // console.log(searchParams.getAll("genre"));
-
-  //   console.log(category)
+  
   return (
     <div>
       <h3>Filter...</h3>

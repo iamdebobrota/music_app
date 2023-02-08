@@ -8,12 +8,10 @@ import {
   UPDATE_SUCCESS,
 } from "./actionType";
 
-const url = "https://good-puce-caterpillar-boot.cyclic.app/albums"
+const url = "https://good-puce-caterpillar-boot.cyclic.app/albums";
 
 export const getMusicRecords = (params) => (dispatch) => {
   dispatch({ type: GET_MUSIC_RECORD_REQUEST });
-  // console.log("param in actionnnnnnn", params);
-
   return axios
     .get(url, params)
     .then((res) => {
@@ -32,13 +30,10 @@ export const updateMusicRecords = (id, payload) => (dispatch) => {
 };
 
 export const deleteFunc = (id) => async (dispatch) => {
-
-
-  try{
-    let delted =  await axios.delete(`${url}/${id}`)
-
-    console.log(delted)
-  }catch(err){
-    console.log(err)
+  try {
+    let delted = await axios.delete(`${url}/${id}`);
+    console.log(delted);
+  } catch (err) {
+    console.log(err);
   }
 };
