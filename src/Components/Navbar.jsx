@@ -53,7 +53,7 @@ export default function Navbar() {
                   minW={0}>
                   <Avatar
                     size={'sm'}
-                    src={'https://avatars.githubusercontent.com/u/101577915?s=400&u=828c50d7eff240fe6eb7b551a9262c4b74d5a26c&v=4'}
+                    src={'https://avatars.githubusercontent.com/u/99647439?v=4'}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -61,7 +61,7 @@ export default function Navbar() {
                   <Center>
                     <Avatar
                       size={'2xl'}
-                      src={'https://avatars.githubusercontent.com/u/101577915?s=400&u=828c50d7eff240fe6eb7b551a9262c4b74d5a26c&v=4'}
+                      src={'https://avatars.githubusercontent.com/u/99647439?v=4'}
                     />
                   </Center>
                   <br />
