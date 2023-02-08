@@ -34,7 +34,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("email", email , password)
+    console.log("email", email, password);
     if (email && password) {
       dispatch(login({ email, password }))
         .then((r) => {
@@ -51,34 +51,37 @@ const Login = () => {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
+      bg={useColorModeValue("gray.50", "gray.800")}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>Sign in to your account</Heading>
-          
         </Stack>
         <Box
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
-          p={8}
-        >
+          p={8}>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input onChange={(e) => setEmail(e.target.value)} type="email" value="eve.holt@reqres.in" />
+              <Input
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                value="eve.holt@reqres.in"
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password"  onChange={(e) => setPassword(e.target.value)} />
+              <Input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </FormControl>
             <Stack spacing={10}>
               <Stack
                 direction={{ base: "column", sm: "row" }}
                 align={"start"}
-                justify={"space-between"}
-              >
+                justify={"space-between"}>
                 <Checkbox>Remember me</Checkbox>
                 <Link color={"blue.400"}>Forgot password?</Link>
               </Stack>
@@ -88,10 +91,7 @@ const Login = () => {
                 _hover={{
                   bg: "blue.500",
                 }}
-
-                   onClick = {handleSubmit}
-
-              >
+                onClick={handleSubmit}>
                 Sign in
               </Button>
             </Stack>
@@ -103,30 +103,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// <div>
-//   <h1>LOGIN PAGE</h1>
-
-//   <form onSubmit={handleSubmit}>
-//     <div>
-//       <label>User Email</label>
-//       <Input
-//         type="email"
-//         placeholder="email"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//       />
-//     </div>
-//     <div>
-//       <label>User Password</label>
-//       <input
-//         type="password"
-//         placeholder="password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//     </div>
-
-//     <input type="submit" value="Submit" />
-//   </form>
-// </div>
