@@ -22,7 +22,6 @@ export const getMusicRecords = (params) => (dispatch) => {
 
 export const updateMusicRecords = (id, payload) => (dispatch) => {
   dispatch({ type: UPDATE_REQUEST });
-
   return axios
     .patch(`${url}/${id}`, payload)
     .then((r) => dispatch({ type: UPDATE_SUCCESS }))

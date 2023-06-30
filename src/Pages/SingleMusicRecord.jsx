@@ -20,6 +20,7 @@ const SingleMusicRecord = () => {
       dispatch(getMusicRecords());
     }
   }, [dispatch, musicRecords.length]);
+
   useEffect(() => {
     if (id) {
       const currentMusic = musicRecords.find((album) => album.id === id);
@@ -49,7 +50,9 @@ const SingleMusicRecord = () => {
   </Box>
 </Center>
 
-      <Link to={`/music/${id}/edit`}><Button colorScheme="teal">Edit</Button></Link>
+      <Link to={`/music/${id}/edit`}>
+        <Button colorScheme="teal">Edit</Button>
+        </Link>
     </>
   );
 };

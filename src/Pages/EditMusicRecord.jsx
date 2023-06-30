@@ -20,7 +20,9 @@ const EditMusicRecord = () => {
   const navigate = useNavigate()
   const { id } = useParams();
   const { musicRecords } = useSelector((store) => store.AppReducer);
-  console.log(musicRecords);
+
+
+  // console.log(musicRecords);
   const [musicName, setMusicName] = useState("");
   const [artistName, setArtistName] = useState("");
 
@@ -34,6 +36,7 @@ const EditMusicRecord = () => {
 
       dispatch(updateMusicRecords(id, payload)).then((r) =>
         dispatch(getMusicRecords())
+        
       ).then(()=> navigate(`/music/${id}`))
     }
    };

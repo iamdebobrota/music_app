@@ -4,22 +4,15 @@ import { useSearchParams } from "react-router-dom";
 const FilterSort = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-
-  let initalGenreParams = searchParams.getAll("genre");           // [] getAll
+  let initalGenreParams = searchParams.getAll("genre"); // [] getAll
   const [category, setCategory] = useState(initalGenreParams || []);
 
-  let initialSortParams = searchParams.get("sortBy");                // string  get
+  let initialSortParams = searchParams.get("sortBy"); // string  get
   const [sortBy, setSortBy] = useState(initialSortParams || "");
 
-
-  console.log(undefined || [])  // []
-
-
-
-
   const handleGenreChange = (e) => {
-    const option = e.target.value;   // k-pop
-    let newCategory = [...category];    // [k-pop]
+    const option = e.target.value; // k-pop
+    let newCategory = [...category]; // [k-pop]
 
     if (category.includes(option)) {
       newCategory.splice(newCategory.indexOf(option), 1);
@@ -33,7 +26,6 @@ const FilterSort = () => {
     setSortBy(e.target.value);
   };
 
-
   useEffect(() => {
     if (category || sortBy) {
       const params = {};
@@ -41,8 +33,8 @@ const FilterSort = () => {
       sortBy && (params.sortBy = sortBy);
       setSearchParams(params);
     }
-  }, [category, setSearchParams, sortBy]);  // dependency
-  
+  }, [category, setSearchParams, sortBy]); // dependency
+
   return (
     <div>
       <h3>Filter...</h3>

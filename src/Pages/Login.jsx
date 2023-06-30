@@ -24,17 +24,17 @@ const Login = () => {
   const [email, setEmail] = useState("eve.holt@reqres.in");
   const [password, setPassword] = useState("");
 
-  console.log("loginLocation", location);
+  // console.log("loginLocation", location);
 
   const { isAuth } = useSelector((state) => state.AuthReducer);
   // console.log("isAuth", isAuth);
   const pathComingFrom = location.state?.from?.pathname || "/";
   // console.log(pathComingFrom);
+
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("email", email, password);
     if (email && password) {
       dispatch(login({ email, password }))
         .then((r) => {

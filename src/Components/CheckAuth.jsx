@@ -8,6 +8,7 @@ const CheckAuth = ({ children }) => {
 
   const { isAuth } = useSelector((store) => store.AuthReducer);
      const location = useLocation();
+    //  console.log(location, "location")
 
   if (!isAuth) {
     //login Page

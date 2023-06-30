@@ -22,7 +22,7 @@ export default Homepage;
 
 const HomePageWrapper = styled.div`
   display: flex;
-  height: 100vh;
+  height: 90vh;
 `;
 const FilterSortWrapper = styled.div`
   position: fixed;
