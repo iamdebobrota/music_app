@@ -1,3 +1,4 @@
+import { Box, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -36,8 +37,8 @@ const FilterSort = () => {
   }, [category, setSearchParams, sortBy]); // dependency
 
   return (
-    <div>
-      <h3>Filter...</h3>
+    <Box textAlign={'left'} paddingLeft={'8'} paddingTop={'5'}>
+      <Text fontSize='xl' fontWeight={'bold'} textAlign={'left'}>Filter</Text>
       <div>
         <input
           value="K-Pop"
@@ -83,7 +84,7 @@ const FilterSort = () => {
         />
         <label>Pop</label>
       </div>
-      <h3>Sort</h3>
+      <Text fontSize='xl' fontWeight={'bold'} marginTop={'5'}>Sort</Text>
       <div>
         <div>
           <input
@@ -106,7 +107,7 @@ const FilterSort = () => {
           <label>Descending</label>
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

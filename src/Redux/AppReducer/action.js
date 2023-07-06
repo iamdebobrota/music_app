@@ -8,7 +8,7 @@ import {
   UPDATE_SUCCESS,
 } from "./actionType";
 
-const url = "https://good-puce-caterpillar-boot.cyclic.app/albums";
+const url = "http://localhost:8080/albums";
 
 export const getMusicRecords = (params) => (dispatch) => {
   dispatch({ type: GET_MUSIC_RECORD_REQUEST });

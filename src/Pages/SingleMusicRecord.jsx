@@ -1,4 +1,4 @@
-import { Box, Button, Center } from "@chakra-ui/react";
+import { Box, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
@@ -28,31 +28,30 @@ const SingleMusicRecord = () => {
     }
   }, [id, musicRecords]);
 
-
   return (
     <>
-      <h1>SingleMusicRecord</h1>
-<Center>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <Box boxShadow='lg' p='6' rounded='md' bg='white'>
-  
-      <div >
-        <h4> {currentMusicAlbum.id} </h4>
-        <h4> {currentMusicAlbum.name} </h4>
-        <h4> {currentMusicAlbum.genre} </h4>
-        <img src={currentMusicAlbum.img} alt="pic" />
-        <h4> {currentMusicAlbum.artist} </h4>
-      </div>
-  </Box>
-</Center>
+      <Text fontSize={"2xl"} fontWeight={"bold"}>
+        SingleMusicRecord
+      </Text>
+      <Center>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Box boxShadow="lg" p="6" rounded="md" bg="white">
+          <div>
+            <h4>Id: {currentMusicAlbum.id} </h4>
+            <h4>Name: {currentMusicAlbum.name} </h4>
+            <h4>Gengre: {currentMusicAlbum.genre} </h4>
+            <img src={currentMusicAlbum.img} alt="pic" />
+            <h4>Artist: {currentMusicAlbum.artist} </h4>
+          </div>
+        </Box>
+      </Center>
 
       <Link to={`/music/${id}/edit`}>
         <Button colorScheme="teal">Edit</Button>
-        </Link>
+      </Link>
     </>
   );
 };
